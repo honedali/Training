@@ -8,9 +8,15 @@ modules:
    path: dpOracle
    requires:
     - name: hdi_dpOracle
+    - name: DPORACLE
 
 resources:
  - name: hdi_dpOracle
    properties:
       hdi-container-name: ${service-name}
    type: com.sap.xs.hdi-container
+   
+ - name: DPORACLE
+   type: org.cloudfoundry.existing-service
+   parameters:
+      service-name: DPORACLE
